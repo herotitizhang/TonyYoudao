@@ -1,25 +1,57 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <groupId>com.tony.creation</groupId>
-  <artifactId>youdict</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<!-- 
+	solution to errors:
+	
+	1. Maven complains about the following:
+	[WARNING] The POM for stax:stax:jar:1.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+	[WARNING] The POM for stax:stax-ri:jar:1.0 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+	[WARNING] The POM for clover:clover:jar:1.3-rc4 is missing, no dependency information available
+	
+	https://stackoverflow.com/questions/10036984/finding-missing-maven-artifacts
+	mvn install:install-file -Dfile=<path-to-file>/stax-1.0.jar -DgroupId=stax -DartifactId=stax -Dversion=1.0 -Dpackaging=jar
+	or
+	just go to local directory /Users/Hanxiao/.m2/repository/stax/stax .lastUpdate
+	 -->
 
-  <name>youdict</name>
-  <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tony.creation</groupId>
+	<artifactId>youdict</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<name>youdict</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit_version>3.8.1</junit_version>
+		<dom4j_version>20040902.021138</dom4j_version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit_version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j_version}</version>
+		</dependency>
+
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
