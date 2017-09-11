@@ -1,0 +1,15 @@
+CREATE TABLE vocabs (
+	word VARCHAR(100) PRIMARY KEY,
+	trans VARCHAR(500),
+	phonetic VARCHAR(100),
+	tags VARCHAR(50),
+	progress INTEGER
+);
+
+CREATE TABLE vocabs_being_studied (
+	word VARCHAR(100) PRIMARY KEY,
+	trans VARCHAR(500),
+	phonetic VARCHAR(100),
+	tags VARCHAR(50),
+	progress INTEGER
+);
