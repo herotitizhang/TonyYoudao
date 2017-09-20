@@ -1,8 +1,7 @@
 package com.tony.creation.youdict;
 
-import com.tony.creation.db.daoimpl.VocabularyJDBCTemplate;
-import com.tony.creation.db.bean.Vocabulary;;
 
+import com.tony.creation.controllers.TestController;
 
 /**
  * Hello world!
@@ -12,6 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println(YoudaoXmlLoader.saveVocabsToDatabase());
+//        SpringApplication.run(TestController.class, args);
+//        System.out.println(YoudaoXmlLoader.saveVocabsToDatabase());
     }
 }
