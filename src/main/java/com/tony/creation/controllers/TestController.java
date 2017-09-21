@@ -1,10 +1,10 @@
 package com.tony.creation.controllers;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+
+@RestController // note: has to be @RestController. doesn't work if it's only @Controller
 @RequestMapping("/tests") 
 public class TestController {
 
@@ -13,5 +13,9 @@ public class TestController {
 		return "home";
 	}
 		
-
+	@RequestMapping("/hey") 
+	public String hey() {
+		return "hey";
+	}
+	
 }
